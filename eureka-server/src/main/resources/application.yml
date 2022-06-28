@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: @project.description@
+  profiles:
+    active: peer1
+  security:
+    user:
+      name: user
+      password: pwd123123
