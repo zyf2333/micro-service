@@ -7,7 +7,7 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:8090
+        url: http://localhost:8100
   jpa:
     # 让hibernate打印执行的SQL
     show-sql: true
@@ -20,6 +20,10 @@ eureka:
     service-url:
       defaultZone: http://user:pwd123123@localhost:8761/eureka/,http://user:pwd123123@localhost:8762/eureka/
 
+ribbon:
+  #默认懒加载，开启饥饿加载，让Ribbon在应用启动时就初始化，避免首次访问慢
+  eager-load:
+    enabled: true
 
 logging:
   level:

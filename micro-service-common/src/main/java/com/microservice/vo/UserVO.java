@@ -15,9 +15,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserVO {
+
     private Long id;
     private String username;
     private String name;
     private Integer age;
     private BigDecimal balance;
+    private String serverPort;
 }

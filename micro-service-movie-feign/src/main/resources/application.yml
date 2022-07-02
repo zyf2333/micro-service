@@ -7,7 +7,7 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:8090
+        url: http://localhost:8100
   jpa:
     # 让hibernate打印执行的SQL
     show-sql: true
@@ -20,15 +20,14 @@ eureka:
     service-url:
       defaultZone: http://user:pwd123123@localhost:8761/eureka/,http://user:pwd123123@localhost:8762/eureka/
 
-
 logging:
   level:
-    root: INFO
+    root: info
     # 配置日志级别，让hibernate打印出执行的SQL参数
-    org.hibernate: INFO
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-
+#    org.hibernate: debug
+#    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+#    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.microservice.feignclient.UserFeignClient: debug
 #监控配置
 management:
   endpoint:
@@ -40,3 +39,11 @@ management:
       exposure:
         # 暴露metrics端点，如需暴露多个，用,分隔；如需暴露所有端点，用'*'
         include: '*'
+ribbon:
+  eager-load:
+    enabled: true
+
+#fallbackFactory需要配置这个
+feign:
+  hystrix:
+    enabled: true

@@ -12,15 +12,15 @@ import org.springframework.context.annotation.Configuration;
  * @ClassName RibbonConfiguration
  * @Date 2022/3/3 15:27
  **/
-//@Configuration
+@Configuration
 public class RibbonConfiguration {
 
     @Bean
     public IRule ribbonRule() {
         // 负载均衡规则，改为随机
-//        return new RandomRule();
+        return new RandomRule();
         //响应时间
-        return new WeightedResponseTimeRule();
+//        return new WeightedResponseTimeRule();
     }
 
 }

@@ -8,16 +8,15 @@ import org.springframework.web.client.RestTemplate;
 /**
  * @Author zyf
  * @Description
- * @ClassName BeanConfigration
- * @Date 2022/2/28 15:22
+ * @ClassName RestTemplate
+ * @Date 2022/6/28 23:39
  **/
 @Configuration
-public class BeanConfigration {
+public class RestTemplateConfig {
 
     @Bean
     @LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
-
 }

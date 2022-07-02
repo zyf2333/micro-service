@@ -7,10 +7,22 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:8090
+        url: http://localhost:8100
+        username: test
+        password: 123456
+        instance:
+          prefer-ip: true
+          #客户端security用户名密码
+          metadata:
+            user.name: client
+            user.password: 123456
   jpa:
     # 让hibernate打印执行的SQL
     show-sql: true
+  security:
+    user:
+      name: client
+      password: 123456
 
 eureka:
   instance:
